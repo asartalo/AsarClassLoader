@@ -1,10 +1,12 @@
 <?php
 
 /**
- * This is a modified version of the SplClassLoader. The modification now allows
- * for loading single classes (e.g. Pimple.php).
+ * This is a modified version of the SplClassLoader.
  *
- * @author Wayne Duran <asartalo@projectweb.ph>
+ * The modification now allows for loading single classes (e.g. Pimple.php).
+ * This class loader was created to prevent conflicts when using the original
+ * SplClassLoader. SplClassLoader documentation follows...
+ *
  *
  * SplClassLoader implementation that implements the technical interoperability
  * standards for PHP 5.3 namespaces and class names.
@@ -21,6 +23,7 @@
  * @author Matthew Weier O'Phinney <matthew@zend.com>
  * @author Kris Wallsmith <kris.wallsmith@gmail.com>
  * @author Fabien Potencier <fabien.potencier@symfony-project.org>
+ * @author Wayne Duran <asartalo@projectweb.ph>
  */
 class AsarClassLoader
 {
@@ -30,13 +33,12 @@ class AsarClassLoader
     private $_namespaceSeparator = '\\';
 
     /**
-     * Creates a new <tt>SplClassLoader</tt> that loads classes of the
+     * Creates a new <tt>AsarClassLoader</tt> that loads classes of the
      * specified namespace.
      *
      * @param string $ns The namespace to use.
      */
-    public function __construct($ns = null, $includePath = null)
-    {
+    public function __construct($ns = null, $includePath = null) {
         $this->_namespace = $ns;
         $this->_includePath = $includePath;
     }
