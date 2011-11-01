@@ -25,7 +25,7 @@ SplClassLoader.
 <date><?php echo $date ?></date>
 <time><?php echo $time ?></time>
 <version>
-  <release>1.0.0</release>
+  <release>1.0.1</release>
   <api>1.0.0</api>
 </version>
 <stability>
