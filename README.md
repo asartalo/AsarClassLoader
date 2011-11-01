@@ -10,6 +10,8 @@ SplClassLoader.
 Usage:
 
 ```php
-$classLoader = new SplClassLoader('Doctrine\Common', '/path/to/doctrine');
+$classLoader = new \Asar\ClassLoader('Doctrine\Common', '/path/to/doctrine');
+$classLoader->register();
+$classLoader = new \Asar\ClassLoader('Pimple', '/path/to/pimple');
 $classLoader->register();
 ```
