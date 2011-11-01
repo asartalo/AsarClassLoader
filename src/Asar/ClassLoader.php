@@ -1,5 +1,7 @@
 <?php
 
+namespace Asar;
+
 /**
  * This is a modified version of the SplClassLoader.
  *
@@ -25,7 +27,7 @@
  * @author Fabien Potencier <fabien.potencier@symfony-project.org>
  * @author Wayne Duran <asartalo@projectweb.ph>
  */
-class AsarClassLoader
+class ClassLoader
 {
     private $_fileExtension = '.php';
     private $_namespace;
@@ -37,6 +39,7 @@ class AsarClassLoader
      * specified namespace.
      *
      * @param string $ns The namespace to use.
+     * @param string $includePath
      */
     public function __construct($ns = null, $includePath = null) {
         $this->_namespace = $ns;
@@ -56,7 +59,7 @@ class AsarClassLoader
     /**
      * Gets the namespace seperator used by classes in the namespace of this class loader.
      *
-     * @return void
+     * @return string
      */
     public function getNamespaceSeparator()
     {
